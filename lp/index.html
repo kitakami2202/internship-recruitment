@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>インターンシップ受け入れ企業募集 | 城西大学 柳澤ゼミ</title>
   <style>
-    /* ===== Reset & Base ===== */
     *, *::before, *::after {
       margin: 0;
       padding: 0;
@@ -18,60 +17,30 @@
 
     body {
       font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Meiryo", sans-serif;
-      color: #333;
-      background: #fafcfb;
+      color: #2d2d2d;
+      background: #fff;
       line-height: 1.8;
-      font-size: 16px;
+      font-size: 18px;
     }
 
     img {
       max-width: 100%;
       height: auto;
+      display: block;
     }
 
     a {
-      color: #2c7a5c;
+      color: #2c6e4f;
       text-decoration: none;
     }
 
-    /* ===== Utility ===== */
     .container {
-      max-width: 800px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
-    .section {
-      padding: 60px 0;
-    }
-
-    .section-title {
-      font-size: 24px;
-      font-weight: 900;
-      color: #2c7a5c;
-      text-align: center;
-      margin-bottom: 12px;
-      letter-spacing: 0.05em;
-    }
-
-    .section-title-en {
-      font-size: 12px;
-      color: #aaa;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 32px;
-    }
-
-    .section-divider {
-      width: 60px;
-      height: 3px;
-      background: #2c7a5c;
-      margin: 0 auto 40px;
-      border-radius: 2px;
-    }
-
-    /* ===== Header / Nav ===== */
+    /* ヘッダー */
     .site-header {
       background: #fff;
       border-bottom: 1px solid #e8e8e8;
@@ -88,545 +57,572 @@
     }
 
     .site-logo {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
-      color: #2c7a5c;
+      color: #2c6e4f;
     }
 
-    .header-cta-btn {
-      background: #2c7a5c;
+    .header-cta {
+      background: #c4593c;
       color: #fff;
-      padding: 8px 20px;
+      padding: 10px 22px;
       border-radius: 6px;
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 700;
       transition: background 0.2s;
     }
 
-    .header-cta-btn:hover {
-      background: #245f49;
+    .header-cta:hover {
+      background: #a94830;
       color: #fff;
     }
 
-    /* ===== Hero / First View ===== */
+    /* ヒーロー */
     .hero {
-      background: #2c7a5c;
-      color: #fff;
-      padding: 48px 0 44px;
       position: relative;
+      color: #fff;
+      padding: 80px 0 72px;
       overflow: hidden;
     }
 
-    .hero::before {
-      content: "";
+    .hero-bg {
       position: absolute;
-      top: -60px;
-      right: -60px;
-      width: 240px;
-      height: 240px;
-      background: rgba(255, 255, 255, 0.04);
-      border-radius: 50%;
+      inset: 0;
+      background: url('images/hero.jpg') center/cover no-repeat;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(20, 50, 35, 0.72);
     }
 
     .hero .container {
-      display: flex;
-      align-items: center;
-      gap: 36px;
+      position: relative;
+      z-index: 1;
     }
 
-    /* Left: catch copy + CTA */
-    .hero-left {
-      flex: 1;
-    }
-
-    .hero-label {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.15);
-      padding: 4px 16px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      font-size: 28px;
-      font-weight: 900;
-      line-height: 1.55;
-      letter-spacing: 0.03em;
+    .hero-lead {
+      font-size: 16px;
+      opacity: 0.8;
       margin-bottom: 12px;
     }
 
-    .hero-sub {
-      font-size: 14px;
-      opacity: 0.85;
-      margin-bottom: 24px;
-      line-height: 1.7;
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 900;
+      line-height: 1.55;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      opacity: 0.9;
+      line-height: 1.8;
+      margin-bottom: 32px;
+      max-width: 720px;
     }
 
     .hero-btn {
       display: inline-block;
-      background: #fff;
-      color: #2c7a5c;
-      padding: 13px 36px;
+      background: #c4593c;
+      color: #fff;
+      padding: 16px 40px;
       border-radius: 8px;
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 700;
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 16px rgba(196, 89, 60, 0.3);
     }
 
     .hero-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-      color: #2c7a5c;
+      box-shadow: 0 6px 24px rgba(196, 89, 60, 0.4);
+      color: #fff;
     }
 
-    /* Right: profile card */
-    .hero-profile {
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
-      padding: 24px;
-      width: 280px;
-      flex-shrink: 0;
-      text-align: center;
-    }
-
-    .hero-photo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
-      border: 3px solid rgba(255, 255, 255, 0.3);
-      margin: 0 auto 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    .hero-profile-name {
-      font-size: 20px;
-      font-weight: 900;
-      margin-bottom: 4px;
-    }
-
-    .hero-profile-title {
-      font-size: 12px;
-      opacity: 0.8;
-      line-height: 1.6;
-      margin-bottom: 8px;
-    }
-
-    .hero-credential {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.2);
-      font-size: 10px;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 4px;
-      margin-bottom: 12px;
-    }
-
-    .hero-voice {
-      font-size: 13px;
-      line-height: 1.65;
-      opacity: 0.9;
-      text-align: left;
-      padding-left: 12px;
-      border-left: 2px solid rgba(255, 255, 255, 0.4);
-    }
-
-    /* ===== About / Profile ===== */
-    .about {
+    /* ゼミ生の活動 */
+    .students {
+      padding: 64px 0;
       background: #fff;
     }
 
-    .about-card {
-      display: flex;
-      gap: 30px;
-      align-items: flex-start;
-      background: #f8fbf9;
-      border-radius: 16px;
-      padding: 32px;
-      border: 1px solid #e0ede6;
-    }
-
-    .about-photo {
-      background: #e8e8e8;
-      border: 2px dashed #ccc;
-      border-radius: 12px;
-      width: 160px;
-      height: 180px;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      color: #999;
-      text-align: center;
-    }
-
-    .about-content {
-      flex: 1;
-    }
-
-    .about-name {
+    .students h2 {
       font-size: 26px;
       font-weight: 900;
-      color: #2c7a5c;
-      margin-bottom: 2px;
-    }
-
-    .about-name-ruby {
-      font-size: 12px;
-      color: #888;
-      margin-bottom: 12px;
-    }
-
-    .about-meta {
-      font-size: 14px;
-      line-height: 2;
-      margin-bottom: 16px;
-    }
-
-    .about-meta dt {
-      font-weight: 700;
-      color: #2c7a5c;
-      display: inline;
-    }
-
-    .about-meta dd {
-      display: inline;
-      margin-left: 4px;
-    }
-
-    .about-meta .row {
-      margin-bottom: 2px;
-    }
-
-    .about-career {
-      margin-top: 16px;
-    }
-
-    .about-career h4 {
-      font-size: 13px;
-      font-weight: 700;
-      color: #2c7a5c;
+      color: #1a1a1a;
       margin-bottom: 8px;
-      padding-bottom: 4px;
-      border-bottom: 1px solid #d4e8dc;
     }
 
-    .about-career ul {
-      list-style: none;
-      font-size: 13px;
-      line-height: 1.8;
-      color: #555;
-    }
-
-    .about-career ul li::before {
-      content: "- ";
-      color: #2c7a5c;
-    }
-
-    .about-vision {
-      background: linear-gradient(135deg, #fff8e1, #fffce8);
-      border-left: 4px solid #d4a017;
-      border-radius: 8px;
-      padding: 20px 24px;
-      margin-top: 24px;
-      font-size: 15px;
-      line-height: 1.8;
-      color: #5a4a00;
-    }
-
-    .about-vision strong {
-      color: #b8860b;
+    .students-intro {
       font-size: 17px;
+      color: #666;
+      margin-bottom: 36px;
+      line-height: 1.8;
     }
 
-    /* ===== Internship ===== */
-    .internship {
-      background: #fafcfb;
+    .student-grid {
+      display: grid;
+      gap: 20px;
     }
 
-    .intern-intro {
-      text-align: center;
-      font-size: 15px;
-      margin-bottom: 32px;
+    .student-card-featured {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e0e0d8;
+    }
+
+    .student-card-featured-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    .student-card-featured-body {
+      padding: 24px 28px 28px;
+    }
+
+    .student-card-featured .card-label {
+      display: inline-block;
+      background: #2c6e4f;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .student-card-featured h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .student-card-featured p {
+      font-size: 16px;
       color: #555;
+      line-height: 1.8;
     }
 
-    .intern-features {
+    .student-card-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
-      margin-bottom: 32px;
     }
 
-    .intern-feature-card {
+    .student-card-small {
       background: #fff;
-      border: 1px solid #e0ede6;
-      border-radius: 12px;
-      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #e0e0d8;
+      overflow: hidden;
     }
 
-    .intern-feature-card h4 {
-      font-size: 15px;
+    .student-card-small-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .student-card-small-body {
+      padding: 18px 20px 20px;
+    }
+
+    .student-card-small .card-label {
+      display: inline-block;
+      background: #f0ebe3;
+      color: #8a7a62;
+      font-size: 13px;
       font-weight: 700;
-      color: #2c7a5c;
+      padding: 3px 10px;
+      border-radius: 4px;
       margin-bottom: 8px;
     }
 
-    .intern-feature-card p {
-      font-size: 13px;
+    .student-card-small h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+
+    .student-card-small p {
+      font-size: 15px;
       color: #666;
       line-height: 1.7;
     }
 
-    .intern-table {
+    /* 受入について */
+    .flow {
+      padding: 60px 0;
+      background: #f5f0e8;
+    }
+
+    .flow h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .flow-intro {
+      font-size: 17px;
+      color: #666;
+      margin-bottom: 32px;
+    }
+
+    .flow-table {
       width: 100%;
       background: #fff;
-      border-radius: 12px;
+      border-radius: 10px;
       overflow: hidden;
-      border: 1px solid #e0ede6;
     }
 
-    .intern-table th,
-    .intern-table td {
-      padding: 14px 20px;
+    .flow-table th,
+    .flow-table td {
+      padding: 16px 22px;
       text-align: left;
-      font-size: 14px;
-      border-bottom: 1px solid #f0f0f0;
+      font-size: 16px;
+      border-bottom: 1px solid #eae6de;
     }
 
-    .intern-table th {
-      background: #f0f8f4;
-      color: #2c7a5c;
+    .flow-table th {
+      background: #2c6e4f;
+      color: #fff;
       font-weight: 700;
-      width: 140px;
+      width: 130px;
     }
 
-    .intern-table tr:last-child th,
-    .intern-table tr:last-child td {
+    .flow-table tr:last-child th,
+    .flow-table tr:last-child td {
       border-bottom: none;
     }
 
-    .intern-note {
+    .flow-note {
       font-size: 13px;
-      color: #888;
+      color: #999;
       margin-top: 12px;
-      text-align: center;
     }
 
-    /* placeholder for achievements */
-    .intern-achievements {
-      background: #f7f7f7;
-      border: 2px dashed #ccc;
-      border-radius: 12px;
-      padding: 24px;
+    .flow-achievements {
+      background: #fff;
+      border-radius: 10px;
+      padding: 22px;
       margin-top: 24px;
       text-align: center;
-      color: #999;
-      font-size: 13px;
+      color: #555;
+      font-size: 16px;
       line-height: 1.7;
     }
 
-    /* ===== Merit ===== */
-    .merit {
-      background: #fff;
+    .flow-achievements strong {
+      color: #2c6e4f;
+      font-size: 17px;
     }
 
-    .merit-cards {
+    /* メリット */
+    .merits {
+      padding: 64px 0;
+      background: #eef5f0;
+    }
+
+    .merits h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: #1a1a1a;
+      margin-bottom: 32px;
+    }
+
+    .merit-list {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 20px;
     }
 
     .merit-card {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      background: #f8fbf9;
+      background: #fff;
       border-radius: 12px;
-      padding: 24px;
-      border: 1px solid #e0ede6;
+      overflow: hidden;
+      border: 1px solid #d8e8dd;
     }
 
-    .merit-num {
-      background: #2c7a5c;
+    .merit-card-img-wrap {
+      position: relative;
+    }
+
+    .merit-card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .merit-card-num {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #2c6e4f;
       color: #fff;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      font-size: 20px;
-      font-weight: 900;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+
+    .merit-card-body {
+      padding: 20px;
     }
 
     .merit-card-body h4 {
-      font-size: 17px;
-      font-weight: 700;
-      color: #2c7a5c;
-      margin-bottom: 6px;
+      font-size: 20px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 10px;
     }
 
     .merit-card-body p {
-      font-size: 14px;
+      font-size: 15px;
       color: #666;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
-    /* ===== FAQ ===== */
+    @media (max-width: 640px) {
+      .merit-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* FAQ */
     .faq {
-      background: #fafcfb;
+      padding: 60px 0;
+      background: #fff;
+    }
+
+    .faq h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: #1a1a1a;
+      margin-bottom: 28px;
     }
 
     .faq-list {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
     }
 
     .faq-item {
-      background: #fff;
-      border-radius: 12px;
+      background: #faf8f4;
+      border-radius: 10px;
       padding: 20px 24px;
-      border: 1px solid #e0ede6;
     }
 
     .faq-q {
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 700;
-      color: #2c7a5c;
+      color: #1a1a1a;
       margin-bottom: 8px;
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
     }
 
     .faq-q span {
-      background: #2c7a5c;
-      color: #fff;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      font-size: 13px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      color: #2c6e4f;
+      font-weight: 800;
+      margin-right: 4px;
     }
 
     .faq-a {
-      font-size: 14px;
+      font-size: 16px;
       color: #555;
-      padding-left: 32px;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
-    /* ===== Contact Form ===== */
+    .faq-a span {
+      color: #c4593c;
+      font-weight: 700;
+      margin-right: 4px;
+    }
+
+    /* お問い合わせ */
     .contact {
-      background: #fff;
+      padding: 64px 0;
+      background: #f5f0e8;
+    }
+
+    .contact h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .contact-intro {
+      font-size: 17px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .contact-tel {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 28px;
+    }
+
+    .contact-tel strong {
+      font-size: 22px;
+      color: #2d2d2d;
+      font-weight: 800;
     }
 
     .contact-form-wrapper {
-      background: #f8fbf9;
-      border-radius: 16px;
-      padding: 40px;
-      border: 1px solid #e0ede6;
-      max-width: 600px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 36px;
+      border: 1px solid #e0e0d8;
+      max-width: 580px;
       margin: 0 auto;
     }
 
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .form-group label {
       display: block;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
       color: #333;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
     .form-group label .required {
-      background: #e74c3c;
+      background: #c4593c;
       color: #fff;
       font-size: 10px;
       padding: 2px 6px;
-      border-radius: 4px;
+      border-radius: 3px;
       margin-left: 6px;
       font-weight: 700;
     }
 
     .form-group label .optional {
-      background: #aaa;
+      background: #bbb;
       color: #fff;
       font-size: 10px;
       padding: 2px 6px;
-      border-radius: 4px;
+      border-radius: 3px;
       margin-left: 6px;
       font-weight: 700;
     }
 
     .form-group input,
-    .form-group textarea {
+    .form-group textarea,
+    .form-group select {
       width: 100%;
-      padding: 12px 14px;
+      padding: 12px 16px;
       border: 1px solid #d0d0d0;
-      border-radius: 8px;
-      font-size: 15px;
+      border-radius: 6px;
+      font-size: 16px;
       font-family: inherit;
       transition: border-color 0.2s;
       background: #fff;
     }
 
+    .form-group select {
+      appearance: auto;
+    }
+
     .form-group input:focus,
-    .form-group textarea:focus {
+    .form-group textarea:focus,
+    .form-group select:focus {
       outline: none;
-      border-color: #2c7a5c;
-      box-shadow: 0 0 0 3px rgba(44, 122, 92, 0.1);
+      border-color: #2c6e4f;
+      box-shadow: 0 0 0 3px rgba(44, 110, 79, 0.1);
     }
 
     .form-group textarea {
-      height: 120px;
+      height: 110px;
       resize: vertical;
+    }
+
+    .checkbox-group,
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 6px;
+    }
+
+    .checkbox-group label,
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      font-weight: 400;
+      color: #444;
+      cursor: pointer;
+    }
+
+    .checkbox-group input,
+    .radio-group input {
+      width: auto;
+      margin: 0;
+    }
+
+    .scale-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .scale-group span {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .scale-group label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      font-size: 14px;
+      font-weight: 400;
+      color: #444;
+      cursor: pointer;
+    }
+
+    .scale-group input {
+      width: auto;
+      margin: 0;
     }
 
     .submit-btn {
       display: block;
       width: 100%;
-      background: linear-gradient(135deg, #2c7a5c, #3aaf85);
+      background: #c4593c;
       color: #fff;
       padding: 16px;
       border: none;
       border-radius: 8px;
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      letter-spacing: 0.05em;
+      transition: background 0.2s;
     }
 
     .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(44, 122, 92, 0.3);
+      background: #a94830;
     }
 
     .form-note {
       font-size: 12px;
-      color: #888;
+      color: #999;
       text-align: center;
-      margin-top: 12px;
+      margin-top: 10px;
     }
 
     .form-success {
@@ -636,8 +632,8 @@
     }
 
     .form-success h3 {
-      font-size: 22px;
-      color: #2c7a5c;
+      font-size: 20px;
+      color: #2c6e4f;
       margin-bottom: 12px;
     }
 
@@ -647,11 +643,124 @@
       line-height: 1.7;
     }
 
-    /* ===== Footer ===== */
+    /* 教授について */
+    .about-professor {
+      padding: 56px 0;
+      background: #fff;
+    }
+
+    .about-professor h2 {
+      font-size: 20px;
+      font-weight: 900;
+      color: #1a1a1a;
+      margin-bottom: 24px;
+    }
+
+    .about-card {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .about-photo {
+      background: #e8e2d8;
+      border-radius: 10px;
+      width: 140px;
+      height: 160px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #aaa;
+      text-align: center;
+    }
+
+    .about-body {
+      flex: 1;
+    }
+
+    .about-name {
+      font-size: 26px;
+      font-weight: 900;
+      color: #2c6e4f;
+      margin-bottom: 2px;
+    }
+
+    .about-name-ruby {
+      font-size: 11px;
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    .about-meta {
+      font-size: 14px;
+      color: #555;
+      line-height: 2;
+      margin-bottom: 14px;
+    }
+
+    .about-meta strong {
+      color: #2c6e4f;
+      font-weight: 700;
+    }
+
+    .about-roles {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.8;
+      padding-top: 12px;
+      border-top: 1px solid #eee;
+    }
+
+    .about-roles dt {
+      font-weight: 700;
+      color: #555;
+      margin-bottom: 4px;
+    }
+
+    .about-roles ul {
+      list-style: none;
+      margin-bottom: 0;
+    }
+
+    .about-roles li {
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .about-roles li::before {
+      content: "-";
+      position: absolute;
+      left: 0;
+      color: #2c6e4f;
+    }
+
+    .about-message {
+      margin-top: 24px;
+      background: #faf8f4;
+      border-radius: 10px;
+      padding: 22px 24px;
+    }
+
+    .about-message h4 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .about-message p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    /* フッター */
     .site-footer {
-      background: #2c3e36;
-      color: rgba(255, 255, 255, 0.7);
-      padding: 32px 0;
+      background: #1a1a1a;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 28px 0;
       text-align: center;
       font-size: 13px;
       line-height: 1.8;
@@ -661,52 +770,50 @@
       color: #fff;
     }
 
-    /* ===== Responsive ===== */
+    /* レスポンシブ */
     @media (max-width: 640px) {
-      .hero .container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-left {
-        text-align: center;
+      .hero {
+        padding: 56px 0 48px;
       }
 
       .hero h1 {
-        font-size: 22px;
+        font-size: 24px;
       }
 
-      .hero-profile {
-        width: 100%;
+      .hero-desc {
+        font-size: 14px;
       }
 
-      .hero-sub {
-        font-size: 13px;
+      .student-card-featured-img {
+        height: 200px;
+      }
+
+      .student-card-row {
+        grid-template-columns: 1fr;
+      }
+
+      .student-card-small-img {
+        height: 160px;
       }
 
       .about-card {
         flex-direction: column;
         align-items: center;
-        text-align: center;
-      }
-
-      .about-meta {
-        text-align: left;
-      }
-
-      .about-career {
-        text-align: left;
-      }
-
-      .intern-features {
-        grid-template-columns: 1fr;
       }
 
       .contact-form-wrapper {
         padding: 24px;
       }
 
-      .section {
+      .students,
+      .merits,
+      .contact {
+        padding: 44px 0;
+      }
+
+      .flow,
+      .faq,
+      .about-professor {
         padding: 40px 0;
       }
     }
@@ -714,219 +821,209 @@
 </head>
 <body>
 
-  <!-- ===== Header ===== -->
+  <!-- ヘッダー -->
   <header class="site-header">
     <div class="container">
       <div class="site-logo">城西大学 柳澤ゼミ</div>
-      <a href="#contact" class="header-cta-btn">お問い合わせ</a>
+      <a href="#contact" class="header-cta">お問い合わせ</a>
     </div>
   </header>
 
-  <!-- ===== 1. Hero / First View ===== -->
+  <!-- ヒーロー -->
   <section class="hero">
+    <div class="hero-bg"></div>
     <div class="container">
-      <div class="hero-left">
-        <span class="hero-label">INTERNSHIP PARTNER WANTED</span>
-        <h1>地域で学ぶ学生を、<br>御社で育ててみませんか？</h1>
-        <p class="hero-sub">城西大学 柳澤ゼミでは、地域活動に取り組む学生の<br>インターンシップ受け入れ企業を募集しています。</p>
-        <a href="#contact" class="hero-btn">お問い合わせはこちら</a>
-      </div>
-      <div class="hero-profile">
-        <div class="hero-photo">
-          <span>写真 or<br>イラスト</span>
-        </div>
-        <div class="hero-profile-name">柳澤 智美</div>
-        <div class="hero-profile-title">城西大学 現代政策学部<br>社会経済システム学科 教授</div>
-        <span class="hero-credential">埼玉県 共助社会づくり推進委員会 委員長</span>
-        <div class="hero-voice">企業と学生が出会うことで、地域はもっと元気になる。私はそう信じています。</div>
-      </div>
+      <p class="hero-lead">城西大学 柳澤研究室より、企業の皆さまへ</p>
+      <h1>うちのゼミ生を、<br>御社で鍛えてもらえませんか。</h1>
+      <p class="hero-desc">
+        ボランティアや子どもの居場所づくりに取り組んできた学生たちです。<br>
+        「授業で学んだことを、企業でも試してみたい」<br>
+        ——そう話す学生のために、インターンシップの受け入れ先を探しています。
+      </p>
+      <a href="#contact" class="hero-btn">お問い合わせはこちら</a>
     </div>
   </section>
 
-  <!-- ===== 2. About / Self Introduction ===== -->
-  <section class="section about" id="about">
+  <!-- ゼミ生の活動 -->
+  <section class="students" id="students">
     <div class="container">
-      <h2 class="section-title">自己紹介</h2>
-      <p class="section-title-en">About</p>
-      <div class="section-divider"></div>
-
-      <div class="about-card">
-        <div class="about-photo">
-          <span>写真 or<br>イラスト<br>（差し替え予定）</span>
-        </div>
-        <div class="about-content">
-          <p class="about-name-ruby">やなぎさわ ともみ</p>
-          <p class="about-name">柳澤 智美</p>
-          <div class="about-meta">
-            <div class="row"><dt>所属：</dt><dd>城西大学 現代政策学部 社会経済システム学科 教授</dd></div>
-            <div class="row"><dt>担当：</dt><dd>ボランティア・インターンシップ等</dd></div>
-            <div class="row"><dt>専門：</dt><dd>共助・関係人口、ボランティア・NPO論、コミュニティ・ビジネス</dd></div>
-            <div class="row"><dt>教科：</dt><dd>NPO論、コミュニティビジネス論、政策評価論、政策学概論 等</dd></div>
-          </div>
-
-          <div class="about-career">
-            <h4>主な委員・社会活動</h4>
-            <ul>
-              <li>埼玉県共助社会づくり推進委員会 委員長</li>
-              <li>坂戸市市民参加推進会議 委員長</li>
-              <li>鶴ヶ島市市民協働推進会議委員会 委員</li>
-              <li>埼玉県公園緑地協会 評議員</li>
-              <li>ひだかん美行委員会 ソーシャルひだかんファレンス審査委員</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="about-vision">
-        「共助」をテーマに、地域社会の課題解決に向けた実践的な学びを推進しています。
-        企業や自治体との連携を通じて、学生の成長と地域貢献の両立を目指しています。<br><br>
-        <strong>「世界中で共助の取組が推進されること」── それが私の夢です。</strong>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 3. Internship Details ===== -->
-  <section class="section internship" id="internship">
-    <div class="container">
-      <h2 class="section-title">インターンシップについて</h2>
-      <p class="section-title-en">Internship Program</p>
-      <div class="section-divider"></div>
-
-      <p class="intern-intro">
-        柳澤ゼミの学生たちは「共助」をテーマに、<br>
-        地域社会の課題解決に向けた実践活動に日常的に取り組んでいます。
+      <h2>ゼミ生が取り組んでいること</h2>
+      <p class="students-intro">
+        柳澤ゼミの学生たちは「共助」をテーマに、地域の中で実際に手を動かしながら学んでいます。
       </p>
 
-      <div class="intern-features">
-        <div class="intern-feature-card">
-          <h4>アーツ・イン・エデュケーション</h4>
-          <p>高齢化が進む地域でのボランティア活動支援を強化し、学生たちは地域貢献の素養を身につけています。</p>
+      <div class="student-grid">
+        <div class="student-card-featured">
+          <img src="images/cafe.jpg" alt="Happy-lucky cafeで学生が子どもたちに料理を提供している様子" class="student-card-featured-img">
+          <div class="student-card-featured-body">
+            <span class="card-label">主な活動</span>
+            <h3>子どもの居場所「Happy-lucky cafe」</h3>
+            <p>
+              放課後に行き場のない子どもたちのために、学生が自分たちで企画・運営しているカフェです。
+              メニュー決めから買い出し、当日の進行まで全部学生がやっています。
+              最初は「何をすればいいかわからない」と戸惑っていた学生も、回を重ねるうちに自分から動けるようになりました。
+            </p>
+          </div>
         </div>
-        <div class="intern-feature-card">
-          <h4>Happy-lucky cafe</h4>
-          <p>子どもの減少が進む地域で放課後の遊び場を提供し、子どもたちと地域の活性化に貢献しています。</p>
-        </div>
-        <div class="intern-feature-card">
-          <h4>地域イベントへの参画</h4>
-          <p>2024年度から市の文化祭や体育祭のサポートにも参加し、地域イベントへの関与が進んでいます。</p>
-        </div>
-        <div class="intern-feature-card">
-          <h4>主体的に動ける学生たち</h4>
-          <p>地域の現場で考え、動く経験を積んだ学生たちです。企業の皆様と一緒に成長できることを楽しみにしています。</p>
+
+        <div class="student-card-row">
+          <div class="student-card-small">
+            <img src="images/elderly.jpg" alt="高齢者施設で折り紙をしながら談笑する学生と高齢者" class="student-card-small-img">
+            <div class="student-card-small-body">
+              <span class="card-label">ボランティア</span>
+              <h3>高齢者施設への訪問活動</h3>
+              <p>
+                近隣の高齢者施設を定期的に訪問しています。最初は会話が続かなかった学生も、今では名前で呼ばれる関係に。顔を出すと「来てくれたの」と喜ばれるのが、学生のやりがいになっています。
+              </p>
+            </div>
+          </div>
+          <div class="student-card-small">
+            <img src="images/event.jpg" alt="地域の体育祭・文化祭で受付を担当する学生たち" class="student-card-small-img">
+            <div class="student-card-small-body">
+              <span class="card-label">地域連携</span>
+              <h3>市の文化祭・体育祭サポート</h3>
+              <p>
+                2024年度から坂戸市・鶴ヶ島市の行事運営に参加。当日の進行補助だけでなく、準備段階から地域の方と一緒に動いています。
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <table class="intern-table">
+  <!-- 受入について -->
+  <section class="flow" id="flow">
+    <div class="container">
+      <h2>受け入れについて</h2>
+      <p class="flow-intro">時期や期間は柔軟に対応します。まずはご相談ください。</p>
+
+      <table class="flow-table">
         <tr>
           <th>受け入れ時期</th>
-          <td>ご相談のうえ柔軟に対応いたします</td>
+          <td>ご相談のうえ柔軟に対応します</td>
         </tr>
         <tr>
           <th>期間</th>
-          <td>短期（1〜2週間）〜 中期（1〜3ヶ月）まで対応可能</td>
+          <td>短期（1〜2週間）から中期（1〜3ヶ月）まで</td>
         </tr>
         <tr>
           <th>人数</th>
-          <td>ご要望に応じて調整いたします</td>
+          <td>ご要望に応じて調整します</td>
         </tr>
         <tr>
           <th>対象業種</th>
-          <td>業種不問（地域に関わる活動であれば幅広くご相談いただけます）</td>
+          <td>業種は問いません。地域に関わる活動であれば幅広くご相談いただけます</td>
+        </tr>
+        <tr>
+          <th>費用</th>
+          <td>企業様のご負担はありません（交通費・保険は大学側で対応）</td>
         </tr>
       </table>
-      <p class="intern-note">※ 詳細はお問い合わせ時にご相談ください</p>
+      <p class="flow-note">※ 詳しい条件はお問い合わせ時にご相談ください</p>
 
-      <!-- Placeholder: past achievements -->
-      <div class="intern-achievements">
-        【過去の受け入れ実績】<br>
-        ここに過去の実績を掲載予定（確認後に追加）<br>
-        例：○○株式会社様（2023年）、△△協同組合様（2024年）など
+      <div class="flow-achievements">
+        <strong>受け入れ実績</strong><br>
+        提携企業 45社（来年度より3社追加予定）<br>
+        参加学生数：2024年度 35名 ／ 2025年度 40名
       </div>
     </div>
   </section>
 
-  <!-- ===== 4. Merit ===== -->
-  <section class="section merit" id="merit">
+  <!-- メリット -->
+  <section class="merits" id="merit">
     <div class="container">
-      <h2 class="section-title">企業様へのメリット</h2>
-      <p class="section-title-en">Benefits</p>
-      <div class="section-divider"></div>
+      <h2>受け入れていただくと</h2>
 
-      <div class="merit-cards">
+      <div class="merit-list">
         <div class="merit-card">
-          <div class="merit-num">1</div>
+          <div class="merit-card-img-wrap">
+            <img src="images/merit-recognition.jpg" alt="就職説明会で学生が企業ブースに集まっている様子" class="merit-card-img">
+            <div class="merit-card-num">特徴 1</div>
+          </div>
           <div class="merit-card-body">
-            <h4>地域貢献意識の高い学生が活躍</h4>
-            <p>日常的に地域活動に取り組んでいるため、現場での主体性・コミュニケーション力があります。受け身ではなく、自ら考え動ける学生たちです。</p>
+            <h4>学生からの認知を獲得できる</h4>
+            <p>求人サイトでは埋もれてしまう中小企業でも、インターンなら学生に直接知ってもらえます。実際に働いた学生が就職先として検討したり、後輩に口コミで広めてくれることも。採用活動の入り口になります。</p>
           </div>
         </div>
         <div class="merit-card">
-          <div class="merit-num">2</div>
+          <div class="merit-card-img-wrap">
+            <img src="images/merit-cost.jpg" alt="学生が中小企業の職場で社員と一緒に働いている様子" class="merit-card-img">
+            <div class="merit-card-num">特徴 2</div>
+          </div>
           <div class="merit-card-body">
-            <h4>大学教授が連携をサポート</h4>
-            <p>柳澤教授が企業様との橋渡し役となり、受け入れ前の打ち合わせから実施中のフォロー、終了後の振り返りまで丁寧にサポートいたします。</p>
+            <h4>コストゼロで試せる</h4>
+            <p>企業様の費用負担はありません。「インターンに興味はあるけど、うちの規模で受け入れられるのか不安」という企業さんでも、まずは短期から気軽に試せます。合わなければ次回は見送るだけです。</p>
           </div>
         </div>
         <div class="merit-card">
-          <div class="merit-num">3</div>
+          <div class="merit-card-img-wrap">
+            <img src="images/merit-connection.jpg" alt="大学キャンパスで企業担当者と大学関係者が集まっている様子" class="merit-card-img">
+            <div class="merit-card-num">特徴 3</div>
+          </div>
           <div class="merit-card-body">
-            <h4>地域とのつながりが広がる</h4>
-            <p>大学・自治体・地域団体とのネットワークを通じて、インターンシップをきっかけに新たな連携や協働の機会が生まれます。</p>
+            <h4>地域・大学との連携</h4>
+            <p>インターンの受け入れをきっかけに、大学や自治体との接点ができます。一度つながりができると、採用だけでなく産学連携や地域事業など、別の形で関係が続いていくこともあります。</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 5. FAQ ===== -->
-  <section class="section faq" id="faq">
+  <!-- FAQ -->
+  <section class="faq" id="faq">
     <div class="container">
-      <h2 class="section-title">よくある質問</h2>
-      <p class="section-title-en">FAQ</p>
-      <div class="section-divider"></div>
+      <h2>よくある質問</h2>
 
       <div class="faq-list">
         <div class="faq-item">
-          <div class="faq-q"><span>Q</span>受け入れにかかる費用はありますか？</div>
-          <div class="faq-a">基本的に費用は発生しません。詳細はお問い合わせください。</div>
+          <div class="faq-q"><span>Q.</span> 費用はかかりますか？</div>
+          <div class="faq-a"><span>A.</span> いいえ、かかりません。企業さんにお願いするのは、学生の受け入れと指導だけです。</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q"><span>Q</span>どのような業種でも受け入れ可能ですか？</div>
-          <div class="faq-a">業種は問いません。地域に関わる活動であれば幅広くご相談いただけます。</div>
+          <div class="faq-q"><span>Q.</span> どんな業種でも大丈夫ですか？</div>
+          <div class="faq-a"><span>A.</span> 業種は問いません。これまで福祉系だけでなく、製造業や小売業の企業にも受け入れていただいています。「うちみたいな会社でも？」と聞かれることがありますが、大丈夫です。</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q"><span>Q</span>学生の交通費や保険はどうなりますか？</div>
-          <div class="faq-a">大学側で対応いたします。詳細は個別にご説明します。</div>
+          <div class="faq-q"><span>Q.</span> インターンの受け入れは初めてなのですが。</div>
+          <div class="faq-a"><span>A.</span> 初めてのところがほとんどです。事前の打ち合わせで「どんな仕事をお願いできそうか」を一緒に考えます。特別な準備はいりません。</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q"><span>Q</span>初めてインターンを受け入れるのですが大丈夫ですか？</div>
-          <div class="faq-a">初めての企業様にも丁寧にサポートいたしますので、ご安心ください。まずはお気軽にお問い合わせください。</div>
+          <div class="faq-q"><span>Q.</span> 受け入れ中に困ったことがあったら？</div>
+          <div class="faq-a"><span>A.</span> 柳澤に直接ご連絡ください。すぐに対応します。こちらからも定期的に様子を伺いますので、遠慮なく相談してください。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Q.</span> 何人くらい来ますか？</div>
+          <div class="faq-a"><span>A.</span> ご要望に合わせて調整します。1人からでも、複数人でも対応できます。企業さんの規模や業務内容に合わせてご相談しましょう。</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 6. Contact Form ===== -->
-  <section class="section contact" id="contact">
+  <!-- お問い合わせ -->
+  <section class="contact" id="contact">
     <div class="container">
-      <h2 class="section-title">お問い合わせ</h2>
-      <p class="section-title-en">Contact</p>
-      <div class="section-divider"></div>
+      <h2>お問い合わせ</h2>
+      <p class="contact-intro">ご質問だけでも構いません。お気軽にご連絡ください。</p>
+      <p class="contact-tel">お電話でも受け付けています：<strong>049-271-8077</strong>（柳澤研究室）</p>
 
       <div class="contact-form-wrapper">
-        <!-- Form (sends to Google Form) -->
         <form id="contactForm" onsubmit="return handleSubmit(event)">
-          <!-- Hidden: tracking source -->
           <input type="hidden" name="source" id="sourceField" value="">
 
           <div class="form-group">
-            <label>会社名 <span class="required">必須</span></label>
+            <label>貴社名（正式名称） <span class="required">必須</span></label>
             <input type="text" name="company" required placeholder="例：株式会社○○">
           </div>
 
           <div class="form-group">
-            <label>担当者名 <span class="required">必須</span></label>
+            <label>ご担当者様氏名 <span class="required">必須</span></label>
             <input type="text" name="person" required placeholder="例：山田 太郎">
+          </div>
+
+          <div class="form-group">
+            <label>部署名・役職 <span class="required">必須</span></label>
+            <input type="text" name="department" required placeholder="例：人事部 課長">
           </div>
 
           <div class="form-group">
@@ -935,29 +1032,123 @@
           </div>
 
           <div class="form-group">
-            <label>電話番号 <span class="optional">任意</span></label>
-            <input type="tel" name="phone" placeholder="例：049-000-0000">
+            <label>電話番号（ハイフンなし） <span class="required">必須</span></label>
+            <input type="tel" name="phone" required placeholder="例：0492718077">
           </div>
 
           <div class="form-group">
-            <label>メッセージ・ご質問 <span class="optional">任意</span></label>
-            <textarea name="message" placeholder="ご質問やご要望がありましたらご自由にご記入ください"></textarea>
+            <label>インターンシップ実施予定期間 <span class="required">必須</span></label>
+            <select name="period" required>
+              <option value="" disabled selected>選択してください</option>
+              <option value="2026年夏季 (7月～9月)">2026年夏季（7月〜9月）</option>
+              <option value="2026年秋季 (10月～12月)">2026年秋季（10月〜12月）</option>
+              <option value="2027年春季 (1月～3月)">2027年春季（1月〜3月）</option>
+              <option value="年間を通して随時募集">年間を通して随時募集</option>
+              <option value="未定・相談の上決定">未定・相談の上決定</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>主な職種・テーマ（複数選択可） <span class="required">必須</span></label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="jobtype" value="エンジニア/開発"> エンジニア/開発</label>
+              <label><input type="checkbox" name="jobtype" value="デザイナー/クリエイティブ"> デザイナー/クリエイティブ</label>
+              <label><input type="checkbox" name="jobtype" value="営業/ビジネス開発"> 営業/ビジネス開発</label>
+              <label><input type="checkbox" name="jobtype" value="マーケティング/広報"> マーケティング/広報</label>
+              <label><input type="checkbox" name="jobtype" value="企画/コンサルティング"> 企画/コンサルティング</label>
+              <label><input type="checkbox" name="jobtype" value="事務/バックオフィス"> 事務/バックオフィス</label>
+              <label><input type="checkbox" name="jobtype" value="研究開発"> 研究開発</label>
+              <label><input type="checkbox" name="jobtype" value="その他"> その他</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>募集予定人数（概算） <span class="required">必須</span></label>
+            <input type="text" name="headcount" required placeholder="例：3名">
+          </div>
+
+          <div class="form-group">
+            <label>報酬・待遇（複数選択可） <span class="required">必須</span></label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="compensation" value="日当または時給の支給がある"> 日当または時給の支給がある</label>
+              <label><input type="checkbox" name="compensation" value="交通費の支給がある"> 交通費の支給がある</label>
+              <label><input type="checkbox" name="compensation" value="宿泊費の支給がある"> 宿泊費の支給がある</label>
+              <label><input type="checkbox" name="compensation" value="報酬・待遇は特になし（無給）"> 報酬・待遇は特になし（無給）</label>
+              <label><input type="checkbox" name="compensation" value="その他"> その他（下の記述欄にご記入ください）</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>インターンシップ内容の充実度（自己評価） <span class="required">必須</span></label>
+            <div class="scale-group">
+              <span>低い</span>
+              <label><input type="radio" name="quality" value="1" required> 1</label>
+              <label><input type="radio" name="quality" value="2"> 2</label>
+              <label><input type="radio" name="quality" value="3"> 3</label>
+              <label><input type="radio" name="quality" value="4"> 4</label>
+              <label><input type="radio" name="quality" value="5"> 5</label>
+              <span>高い</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>特記事項・ご要望 <span class="optional">任意</span></label>
+            <textarea name="message" placeholder="インターンシップ募集に関して特記事項やご要望がありましたらご記入ください"></textarea>
           </div>
 
           <button type="submit" class="submit-btn">送信する</button>
-          <p class="form-note">※ 送信後、担当者より折り返しご連絡いたします</p>
+          <p class="form-note">※ 送信後、柳澤より折り返しご連絡します</p>
         </form>
 
-        <!-- Success message (hidden by default) -->
         <div class="form-success" id="formSuccess">
-          <h3>送信が完了しました</h3>
-          <p>お問い合わせいただきありがとうございます。<br>内容を確認のうえ、担当者より折り返しご連絡いたします。</p>
+          <h3>送信しました</h3>
+          <p>お問い合わせありがとうございます。<br>内容を確認のうえ、柳澤よりご連絡いたします。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Footer ===== -->
+  <!-- 教授について -->
+  <section class="about-professor" id="about">
+    <div class="container">
+      <h2>柳澤智美について</h2>
+
+      <div class="about-card">
+        <div class="about-photo">
+          <span>写真<br>（差し替え予定）</span>
+        </div>
+        <div class="about-body">
+          <p class="about-name-ruby">やなぎさわ ともみ</p>
+          <p class="about-name">柳澤 智美</p>
+          <div class="about-meta">
+            <strong>所属</strong> 城西大学 現代政策学部 社会経済システム学科 教授<br>
+            <strong>専門</strong> 共助・関係人口、ボランティア・NPO論、コミュニティ・ビジネス<br>
+            <strong>担当科目</strong> NPO論、コミュニティビジネス論、政策評価論 等
+          </div>
+
+          <div class="about-roles">
+            <dt>主な委員・社会活動</dt>
+            <ul>
+              <li>埼玉県共助社会づくり推進委員会 委員長</li>
+              <li>坂戸市市民参加推進会議 委員長</li>
+              <li>鶴ヶ島市市民協働推進会議委員会 委員</li>
+              <li>埼玉県公園緑地協会 評議員</li>
+              <li>ひだかん美行委員会 ソーシャルひだかんファレンス審査委員</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="about-message">
+        <h4>インターンシップへの想い</h4>
+        <p>「共助」をテーマに、学生と地域をつなぐ活動を続けています。企業の皆さんとの連携を通じて、学生が成長し、地域にも何かが残る。そういう循環をつくりたいと思っています。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- フッター -->
   <footer class="site-footer">
     <div class="container">
       <p><strong>城西大学 現代政策学部 社会経済システム学科</strong></p>
@@ -966,7 +1157,7 @@
     </div>
   </footer>
 
-  <!-- ===== JavaScript ===== -->
+  <!-- JavaScript -->
   <script>
     // === Tracking: extract source param from URL ===
     (function() {
@@ -976,31 +1167,41 @@
     })();
 
     // === Form Submission ===
-    // TODO: Replace GOOGLE_FORM_ACTION_URL with actual Google Form action URL
-    // TODO: Replace entry.XXXXX with actual Google Form field IDs
     function handleSubmit(e) {
       e.preventDefault();
 
       var form = document.getElementById('contactForm');
       var formData = new FormData(form);
 
-      // --- Google Form Integration ---
-      // Uncomment and configure the following when Google Form is ready:
-      //
-      // var googleFormURL = 'https://docs.google.com/forms/d/e/XXXXX/formResponse';
-      // var googleData = new FormData();
-      // googleData.append('entry.XXXXX', formData.get('company'));   // 会社名
-      // googleData.append('entry.XXXXX', formData.get('person'));    // 担当者名
-      // googleData.append('entry.XXXXX', formData.get('email'));     // メールアドレス
-      // googleData.append('entry.XXXXX', formData.get('phone'));     // 電話番号
-      // googleData.append('entry.XXXXX', formData.get('message'));   // メッセージ
-      // googleData.append('entry.XXXXX', formData.get('source'));    // 流入元
-      //
-      // fetch(googleFormURL, {
-      //   method: 'POST',
-      //   body: googleData,
-      //   mode: 'no-cors'
-      // });
+      var googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSfyswjSOJxw4WKumLbyvogorjVc-Y-UBz_Z-XPmXnQlqA5S4w/formResponse';
+      var googleData = new FormData();
+      googleData.append('entry.454746907', formData.get('company'));
+      googleData.append('entry.2092629176', formData.get('person'));
+      googleData.append('entry.88741184', formData.get('department'));
+      googleData.append('entry.808044583', formData.get('email'));
+      googleData.append('entry.909610528', formData.get('phone'));
+      googleData.append('entry.398665693', formData.get('period'));
+
+      // 複数選択: 職種・テーマ
+      formData.getAll('jobtype').forEach(function(v) {
+        googleData.append('entry.2011443136', v);
+      });
+
+      googleData.append('entry.558958974', formData.get('headcount'));
+
+      // 複数選択: 報酬・待遇
+      formData.getAll('compensation').forEach(function(v) {
+        googleData.append('entry.274483304', v);
+      });
+
+      googleData.append('entry.1906860444', formData.get('quality'));
+      googleData.append('entry.2070299483', formData.get('message') || '');
+
+      fetch(googleFormURL, {
+        method: 'POST',
+        body: googleData,
+        mode: 'no-cors'
+      });
 
       // Show success message
       form.style.display = 'none';

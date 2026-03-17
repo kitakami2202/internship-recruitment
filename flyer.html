@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>インターンシップ受け入れ企業募集 - チラシ</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Meiryo", sans-serif;
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto;
+      background: #f7f5f0;
+      color: #2d2d2d;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ヘッダー帯 */
+    .top-bar {
+      background: #2c6e4f;
+      color: #fff;
+      padding: 10px 32px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    /* キャッチ */
+    .catch {
+      padding: 28px 32px 18px;
+    }
+
+    .catch-lead {
+      font-size: 13px;
+      color: #6b6b6b;
+      margin-bottom: 6px;
+    }
+
+    .catch-main {
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1.55;
+      color: #1a1a1a;
+    }
+
+    .catch-main em {
+      font-style: normal;
+      color: #2c6e4f;
+      border-bottom: 3px solid #2c6e4f;
+    }
+
+    .catch-sub {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ゼミ活動 */
+    .activities {
+      padding: 18px 32px 14px;
+    }
+
+    .section-heading {
+      font-size: 16px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      padding-left: 12px;
+      border-left: 4px solid #d4a24e;
+    }
+
+    .activity-list {
+      display: flex;
+      gap: 10px;
+    }
+
+    .activity-main {
+      flex: 1.4;
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px 14px;
+    }
+
+    .activity-sub {
+      flex: 1;
+      background: #fff;
+      border-radius: 10px;
+      padding: 14px 12px;
+    }
+
+    .activity-tag {
+      display: inline-block;
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
+
+    .activity-main .activity-tag {
+      background: #2c6e4f;
+      color: #fff;
+    }
+
+    .activity-sub .activity-tag {
+      background: #f0ebe3;
+      color: #8a7a62;
+    }
+
+    .activity-name {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .activity-main .activity-name {
+      font-size: 14.5px;
+    }
+
+    .activity-desc {
+      font-size: 10px;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* メリット */
+    .merits {
+      padding: 14px 32px 16px;
+    }
+
+    .merit-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .merit-item {
+      flex: 1;
+      background: #fff;
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .merit-item:first-child {
+      border-top: 3px solid #2c6e4f;
+    }
+
+    .merit-item:nth-child(2) {
+      border-top: 3px solid #d4a24e;
+    }
+
+    .merit-item:nth-child(3) {
+      border-top: 3px solid #8a7a62;
+    }
+
+    .merit-item-title {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .merit-item-desc {
+      font-size: 9.5px;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    /* 先生ミニ紹介 */
+    .professor {
+      display: flex;
+      gap: 14px;
+      padding: 14px 24px;
+      margin: 6px 24px 0;
+      background: #fff;
+      border-radius: 10px;
+    }
+
+    .professor-illust {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #e8e2d8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      color: #aaa;
+      flex-shrink: 0;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .professor-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .professor-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: #2c6e4f;
+      margin-bottom: 1px;
+    }
+
+    .professor-title {
+      font-size: 9.5px;
+      color: #888;
+      margin-bottom: 4px;
+    }
+
+    .professor-voice {
+      font-size: 11.5px;
+      color: #444;
+      line-height: 1.65;
+    }
+
+    /* CTA */
+    .cta {
+      background: #c4593c;
+      color: #fff;
+      padding: 20px 28px;
+      margin: 12px 24px 0;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .cta-body {
+      flex: 1;
+    }
+
+    .cta-body h3 {
+      font-size: 19px;
+      font-weight: 900;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+
+    .cta-body p {
+      font-size: 11px;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    .cta-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .cta-tel {
+      text-align: right;
+    }
+
+    .cta-tel-label {
+      font-size: 9px;
+      opacity: 0.8;
+    }
+
+    .cta-tel-number {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .cta-divider {
+      width: 1px;
+      height: 60px;
+      background: rgba(255,255,255,0.3);
+    }
+
+    .qr-box {
+      background: #fff;
+      border-radius: 8px;
+      width: 90px;
+      height: 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ccc;
+      font-size: 9px;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .qr-hint {
+      font-size: 8.5px;
+      opacity: 0.8;
+      margin-top: 3px;
+      text-align: center;
+    }
+
+    /* フッター */
+    .footer {
+      margin-top: auto;
+      background: #2d2d2d;
+      color: #fff;
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-mark {
+      width: 34px;
+      height: 34px;
+      background: #2c6e4f;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 7px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .footer-info {
+      font-size: 10.5px;
+      line-height: 1.5;
+    }
+
+    .footer-info .name {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .footer-url {
+      font-size: 10px;
+      opacity: 0.6;
+    }
+
+    @media print {
+      body { width: 210mm; height: 297mm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- ヘッダー帯 -->
+    <div class="top-bar">
+      城西大学 柳澤ゼミ｜インターンシップ受け入れ企業募集
+    </div>
+
+    <!-- キャッチ -->
+    <div class="catch">
+      <p class="catch-lead">城西大学 柳澤研究室より、企業の皆さまへ</p>
+      <p class="catch-main">
+        うちのゼミ生を、<br>
+        <em>御社で鍛えて</em>もらえませんか。
+      </p>
+      <p class="catch-sub">
+        ボランティアや子どもの居場所づくりに取り組んできた学生たちです。<br>
+        「授業で学んだことを、企業でも試してみたい」——そう話す学生のために、<br>インターンシップの受け入れ先を探しています。
+      </p>
+    </div>
+
+    <!-- ゼミ活動 -->
+    <div class="activities">
+      <h3 class="section-heading">こんな学生たちです</h3>
+      <div class="activity-list">
+        <div class="activity-main">
+          <span class="activity-tag">主な活動</span>
+          <div class="activity-name">子どもの居場所「Happy-lucky cafe」</div>
+          <div class="activity-desc">
+            放課後の行き場がない子どもたちのために、学生が企画・運営しているカフェ。メニュー決め、買い出し、当日の進行まで全部自分たちでやっています。最初は「何をすればいいかわからない」と言っていた学生も、今では自分から動けるようになりました。
+          </div>
+        </div>
+        <div class="activity-sub">
+          <span class="activity-tag">ボランティア</span>
+          <div class="activity-name">高齢者施設への訪問</div>
+          <div class="activity-desc">
+            近隣の施設を定期訪問。最初は会話が続かなかった学生も、今では名前で呼ばれるように。
+          </div>
+        </div>
+        <div class="activity-sub">
+          <span class="activity-tag">地域連携</span>
+          <div class="activity-name">市の行事運営サポート</div>
+          <div class="activity-desc">
+            坂戸市・鶴ヶ島市の文化祭や体育祭に、準備段階から参加しています。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- メリット -->
+    <div class="merits">
+      <h3 class="section-heading">受け入れていただくと</h3>
+      <div class="merit-row">
+        <div class="merit-item">
+          <div class="merit-item-title">指示待ちしません</div>
+          <div class="merit-item-desc">カフェ運営やイベント準備で「自分で考えて動く」を日常的にやってきた学生たちです。</div>
+        </div>
+        <div class="merit-item">
+          <div class="merit-item-title">私が最後まで責任を持ちます</div>
+          <div class="merit-item-desc">事前の打ち合わせから実施中の相談、終了後の振り返りまで、柳澤が直接対応します。</div>
+        </div>
+        <div class="merit-item">
+          <div class="merit-item-title">大学・自治体とつながれます</div>
+          <div class="merit-item-desc">インターンをきっかけに坂戸市や鶴ヶ島市との連携が生まれた企業もあります。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 先生ミニ紹介 -->
+    <div class="professor">
+      <div class="professor-illust">
+        <span>イラスト<br>（差替予定）</span>
+      </div>
+      <div class="professor-body">
+        <p class="professor-name">柳澤 智美</p>
+        <p class="professor-title">城西大学 現代政策学部 教授／埼玉県 共助社会づくり推進委員会 委員長</p>
+        <p class="professor-voice">
+          去年インターンに送り出した学生が「自分にもできることがあると思えた」と話してくれました。学生にとって、外の世界で認めてもらえる経験は本当に大きいんです。
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <div class="cta-body">
+        <h3>まずはお気軽にご連絡ください</h3>
+        <p>「チラシを見た」とお伝えいただければ、柳澤が直接ご説明します。<br>QRコードからWebページもご覧いただけます。</p>
+      </div>
+      <div class="cta-right">
+        <div class="cta-tel">
+          <div class="cta-tel-label">お電話はこちら</div>
+          <div class="cta-tel-number">049-271-8077</div>
+        </div>
+        <div class="cta-divider"></div>
+        <div>
+          <div class="qr-box">
+            <span>QRコード<br>（後日設定）</span>
+          </div>
+          <div class="qr-hint">詳細ページへ →</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- フッター -->
+    <div class="footer">
+      <div class="footer-left">
+        <div class="footer-mark">城西<br>大学</div>
+        <div class="footer-info">
+          <div class="name">城西大学 柳澤研究室</div>
+          現代政策学部 社会経済システム学科
+        </div>
+      </div>
+      <div class="footer-url">※ 費用のご負担はありません（交通費・保険は大学側で対応）</div>
+    </div>
+
+  </div>
+</body>
+</html>
