@@ -1233,41 +1233,36 @@
       <p class="contact-tel">お電話でも受け付けています：<strong>049-271-8077</strong>（柳澤研究室）</p>
 
       <div class="contact-form-wrapper">
-        <iframe name="hidden_iframe" style="display:none;"></iframe>
-        <form id="contactForm"
-              action="https://docs.google.com/forms/d/e/1FAIpQLSfyswjSOJxw4WKumLbyvogorjVc-Y-UBz_Z-XPmXnQlqA5S4w/formResponse"
-              method="POST"
-              target="hidden_iframe"
-              onsubmit="handleSubmit()">
+        <form id="contactForm" onsubmit="return handleSubmit(event)">
 
           <div class="form-group">
             <label>貴社名（正式名称） <span class="required">必須</span></label>
-            <input type="text" name="entry.454746907" required placeholder="例：株式会社○○">
+            <input type="text" name="company" required placeholder="例：株式会社○○">
           </div>
 
           <div class="form-group">
             <label>ご担当者様氏名 <span class="required">必須</span></label>
-            <input type="text" name="entry.2092629176" required placeholder="例：山田 太郎">
+            <input type="text" name="person" required placeholder="例：山田 太郎">
           </div>
 
           <div class="form-group">
             <label>部署名・役職 <span class="required">必須</span></label>
-            <input type="text" name="entry.88741184" required placeholder="例：人事部 課長">
+            <input type="text" name="department" required placeholder="例：人事部 課長">
           </div>
 
           <div class="form-group">
             <label>メールアドレス <span class="required">必須</span></label>
-            <input type="email" name="entry.808044583" required placeholder="例：info@example.com">
+            <input type="email" name="email" required placeholder="例：info@example.com">
           </div>
 
           <div class="form-group">
             <label>電話番号（ハイフンなし） <span class="required">必須</span></label>
-            <input type="tel" name="entry.909610528" required placeholder="例：0492718077">
+            <input type="tel" name="phone" required placeholder="例：0492718077">
           </div>
 
           <div class="form-group">
             <label>インターンシップ実施予定期間 <span class="required">必須</span></label>
-            <select name="entry.398665693" required>
+            <select name="period" required>
               <option value="" disabled selected>選択してください</option>
               <option value="2026年夏季 (7月～9月)">2026年夏季（7月〜9月）</option>
               <option value="2026年秋季 (10月～12月)">2026年秋季（10月〜12月）</option>
@@ -1280,30 +1275,30 @@
           <div class="form-group">
             <label>主な職種・テーマ（複数選択可） <span class="required">必須</span></label>
             <div class="checkbox-group">
-              <label><input type="checkbox" name="entry.2011443136" value="エンジニア/開発"> エンジニア/開発</label>
-              <label><input type="checkbox" name="entry.2011443136" value="デザイナー/クリエイティブ"> デザイナー/クリエイティブ</label>
-              <label><input type="checkbox" name="entry.2011443136" value="営業/ビジネス開発"> 営業/ビジネス開発</label>
-              <label><input type="checkbox" name="entry.2011443136" value="マーケティング/広報"> マーケティング/広報</label>
-              <label><input type="checkbox" name="entry.2011443136" value="企画/コンサルティング"> 企画/コンサルティング</label>
-              <label><input type="checkbox" name="entry.2011443136" value="事務/バックオフィス"> 事務/バックオフィス</label>
-              <label><input type="checkbox" name="entry.2011443136" value="研究開発"> 研究開発</label>
-              <label><input type="checkbox" name="entry.2011443136" value="その他"> その他</label>
+              <label><input type="checkbox" name="jobtype" value="エンジニア/開発"> エンジニア/開発</label>
+              <label><input type="checkbox" name="jobtype" value="デザイナー/クリエイティブ"> デザイナー/クリエイティブ</label>
+              <label><input type="checkbox" name="jobtype" value="営業/ビジネス開発"> 営業/ビジネス開発</label>
+              <label><input type="checkbox" name="jobtype" value="マーケティング/広報"> マーケティング/広報</label>
+              <label><input type="checkbox" name="jobtype" value="企画/コンサルティング"> 企画/コンサルティング</label>
+              <label><input type="checkbox" name="jobtype" value="事務/バックオフィス"> 事務/バックオフィス</label>
+              <label><input type="checkbox" name="jobtype" value="研究開発"> 研究開発</label>
+              <label><input type="checkbox" name="jobtype" value="その他"> その他</label>
             </div>
           </div>
 
           <div class="form-group">
             <label>募集予定人数（概算） <span class="required">必須</span></label>
-            <input type="text" name="entry.558958974" required placeholder="例：3名">
+            <input type="text" name="headcount" required placeholder="例：3名">
           </div>
 
           <div class="form-group">
             <label>報酬・待遇（複数選択可） <span class="required">必須</span></label>
             <div class="checkbox-group">
-              <label><input type="checkbox" name="entry.274483304" value="日当または時給の支給がある"> 日当または時給の支給がある</label>
-              <label><input type="checkbox" name="entry.274483304" value="交通費の支給がある"> 交通費の支給がある</label>
-              <label><input type="checkbox" name="entry.274483304" value="宿泊費の支給がある"> 宿泊費の支給がある</label>
-              <label><input type="checkbox" name="entry.274483304" value="報酬・待遇は特になし（無給）"> 報酬・待遇は特になし（無給）</label>
-              <label><input type="checkbox" name="entry.274483304" value="その他"> その他（下の記述欄にご記入ください）</label>
+              <label><input type="checkbox" name="compensation" value="日当または時給の支給がある"> 日当または時給の支給がある</label>
+              <label><input type="checkbox" name="compensation" value="交通費の支給がある"> 交通費の支給がある</label>
+              <label><input type="checkbox" name="compensation" value="宿泊費の支給がある"> 宿泊費の支給がある</label>
+              <label><input type="checkbox" name="compensation" value="報酬・待遇は特になし（無給）"> 報酬・待遇は特になし（無給）</label>
+              <label><input type="checkbox" name="compensation" value="その他"> その他（下の記述欄にご記入ください）</label>
             </div>
           </div>
 
@@ -1311,18 +1306,18 @@
             <label>インターンシップ内容の充実度（自己評価） <span class="required">必須</span></label>
             <div class="scale-group">
               <span>低い</span>
-              <label><input type="radio" name="entry.1906860444" value="1" required> 1</label>
-              <label><input type="radio" name="entry.1906860444" value="2"> 2</label>
-              <label><input type="radio" name="entry.1906860444" value="3"> 3</label>
-              <label><input type="radio" name="entry.1906860444" value="4"> 4</label>
-              <label><input type="radio" name="entry.1906860444" value="5"> 5</label>
+              <label><input type="radio" name="quality" value="1" required> 1</label>
+              <label><input type="radio" name="quality" value="2"> 2</label>
+              <label><input type="radio" name="quality" value="3"> 3</label>
+              <label><input type="radio" name="quality" value="4"> 4</label>
+              <label><input type="radio" name="quality" value="5"> 5</label>
               <span>高い</span>
             </div>
           </div>
 
           <div class="form-group">
             <label>特記事項・ご要望 <span class="optional">任意</span></label>
-            <textarea name="entry.2070299483" placeholder="インターンシップ募集に関して特記事項やご要望がありましたらご記入ください"></textarea>
+            <textarea name="message" placeholder="インターンシップ募集に関して特記事項やご要望がありましたらご記入ください"></textarea>
           </div>
 
           <button type="submit" class="submit-btn">送信する</button>
@@ -1389,12 +1384,47 @@
   <!-- JavaScript -->
   <script>
     // === Form Submission ===
-    function handleSubmit() {
+    function handleSubmit(e) {
+      e.preventDefault();
+
       var form = document.getElementById('contactForm');
-      setTimeout(function() {
-        form.style.display = 'none';
-        document.getElementById('formSuccess').style.display = 'block';
-      }, 500);
+      var formData = new FormData(form);
+
+      var googleFormURL = 'https://docs.google.com/forms/d/e/1FAIpQLSfyswjSOJxw4WKumLbyvogorjVc-Y-UBz_Z-XPmXnQlqA5S4w/formResponse';
+      var googleData = new FormData();
+      googleData.append('entry.454746907', formData.get('company'));
+      googleData.append('entry.2092629176', formData.get('person'));
+      googleData.append('entry.88741184', formData.get('department'));
+      googleData.append('entry.808044583', formData.get('email'));
+      googleData.append('entry.909610528', formData.get('phone'));
+      googleData.append('entry.398665693', formData.get('period'));
+
+      // 複数選択: 職種・テーマ
+      formData.getAll('jobtype').forEach(function(v) {
+        googleData.append('entry.2011443136', v);
+      });
+
+      googleData.append('entry.558958974', formData.get('headcount'));
+
+      // 複数選択: 報酬・待遇
+      formData.getAll('compensation').forEach(function(v) {
+        googleData.append('entry.274483304', v);
+      });
+
+      googleData.append('entry.1906860444', formData.get('quality'));
+      googleData.append('entry.2070299483', formData.get('message') || '');
+
+      fetch(googleFormURL, {
+        method: 'POST',
+        body: googleData,
+        mode: 'no-cors'
+      });
+
+      // Show success message
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+
+      return false;
     }
   </script>
 
