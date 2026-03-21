@@ -21,7 +21,7 @@
       width: 210mm;
       height: 297mm;
       margin: 0 auto;
-      background: #f7f5f0;
+      background: #fff;
       color: #2d2d2d;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
@@ -36,228 +36,247 @@
       flex-direction: column;
     }
 
-    /* ヘッダー帯 */
-    .top-bar {
-      background: #2c6e4f;
+    /* ===== 上段: 誰からの、何のお願いか ===== */
+    .top {
+      padding: 28px 36px 18px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .top-illust {
+      width: 150px;
+      height: 170px;
+      border-radius: 14px;
+      background: #f0ebe3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      color: #aaa;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .top-text {
+      flex: 1;
+    }
+
+    .top-name {
+      font-size: 24px;
+      font-weight: 900;
+      color: #2c6e4f;
+      margin-bottom: 2px;
+    }
+
+    .top-title {
+      font-size: 11px;
+      color: #888;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .top-purpose {
+      font-size: 15px;
+      font-weight: 700;
       color: #fff;
-      padding: 10px 32px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      background: #2c6e4f;
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 4px;
+      margin-bottom: 10px;
     }
 
-    /* キャッチ */
-    .catch {
-      padding: 28px 32px 18px;
-    }
-
-    .catch-lead {
-      font-size: 13px;
-      color: #6b6b6b;
-      margin-bottom: 6px;
-    }
-
-    .catch-main {
+    .top-catch {
       font-size: 30px;
       font-weight: 900;
-      line-height: 1.55;
+      line-height: 1.5;
       color: #1a1a1a;
     }
 
-    .catch-main em {
+    .top-catch em {
       font-style: normal;
       color: #2c6e4f;
       border-bottom: 3px solid #2c6e4f;
     }
 
-    .catch-sub {
-      margin-top: 10px;
+    /* ===== 先生の思い ===== */
+    .message {
+      padding: 0 36px 16px;
       font-size: 13px;
       color: #555;
-      line-height: 1.7;
+      line-height: 1.9;
     }
 
-    /* ゼミ活動 */
-    .activities {
-      padding: 18px 32px 14px;
+    /* ===== 中段 ===== */
+    .middle {
+      flex: 1;
+      padding: 0 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* 実績バー */
+    .stats-bar {
+      display: flex;
+      background: #2c6e4f;
+      color: #fff;
+      border-radius: 8px;
+      padding: 12px 0;
+    }
+
+    .stats-bar-item {
+      flex: 1;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .stats-bar-item:last-child {
+      border-right: none;
+    }
+
+    .stats-bar-num {
+      font-size: 26px;
+      font-weight: 900;
+    }
+
+    .stats-bar-label {
+      font-size: 10px;
+      opacity: 0.8;
+      margin-top: 1px;
+    }
+
+    /* 2カラムレイアウト */
+    .two-col {
+      display: flex;
+      gap: 14px;
+    }
+
+    .col-left {
+      flex: 1;
+    }
+
+    .col-right {
+      flex: 1;
+    }
+
+    /* 活動紹介 */
+    .activity-section {
+      background: #faf8f4;
+      border-radius: 10px;
+      padding: 20px 22px;
     }
 
     .section-heading {
       font-size: 16px;
       font-weight: 800;
       color: #1a1a1a;
-      margin-bottom: 12px;
-      padding-left: 12px;
+      margin-bottom: 10px;
+      padding-left: 10px;
       border-left: 4px solid #d4a24e;
     }
 
-    .activity-list {
-      display: flex;
-      gap: 10px;
-    }
-
-    .activity-main {
-      flex: 1.4;
-      background: #fff;
-      border-radius: 10px;
-      padding: 16px 14px;
-    }
-
-    .activity-sub {
-      flex: 1;
-      background: #fff;
-      border-radius: 10px;
-      padding: 14px 12px;
-    }
-
-    .activity-tag {
-      display: inline-block;
-      font-size: 9.5px;
-      font-weight: 700;
-      padding: 2px 9px;
-      border-radius: 4px;
-      margin-bottom: 5px;
-    }
-
-    .activity-main .activity-tag {
-      background: #2c6e4f;
-      color: #fff;
-    }
-
-    .activity-sub .activity-tag {
-      background: #f0ebe3;
-      color: #8a7a62;
-    }
-
-    .activity-name {
-      font-size: 13.5px;
-      font-weight: 800;
-      color: #1a1a1a;
-      margin-bottom: 4px;
-    }
-
-    .activity-main .activity-name {
-      font-size: 14.5px;
-    }
-
-    .activity-desc {
-      font-size: 10px;
-      color: #666;
-      line-height: 1.65;
-    }
-
-    /* メリット */
-    .merits {
-      padding: 14px 32px 16px;
-    }
-
-    .merit-row {
-      display: flex;
-      gap: 12px;
-    }
-
-    .merit-item {
-      flex: 1;
-      background: #fff;
-      border-radius: 10px;
-      padding: 14px;
-    }
-
-    .merit-item-title {
-      font-size: 12.5px;
-      font-weight: 800;
-      color: #2c6e4f;
-      margin-bottom: 4px;
-    }
-
-    .merit-item-desc {
-      font-size: 9.5px;
-      color: #777;
-      line-height: 1.6;
-    }
-
-    /* 先生ミニ紹介 */
-    .professor {
-      display: flex;
-      gap: 14px;
-      padding: 14px 24px;
-      margin: 6px 24px 0;
-      background: #fff;
-      border-radius: 10px;
-    }
-
-    .professor-illust {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: #e8e2d8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 8px;
-      color: #aaa;
-      flex-shrink: 0;
-      text-align: center;
-      line-height: 1.3;
-    }
-
-    .professor-body {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .professor-name {
+    .activity-main-name {
       font-size: 15px;
       font-weight: 800;
       color: #2c6e4f;
-      margin-bottom: 1px;
+      margin-bottom: 6px;
     }
 
-    .professor-title {
-      font-size: 9.5px;
-      color: #888;
-      margin-bottom: 4px;
+    .activity-main-desc {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 8px;
     }
 
-    .professor-voice {
+    .activity-others {
       font-size: 11.5px;
-      color: #444;
-      line-height: 1.65;
-      font-style: italic;
+      color: #888;
+      line-height: 1.6;
+      padding-top: 8px;
+      border-top: 1px solid #e8e2d8;
     }
 
-    /* CTA */
-    .cta {
-      background: #c4593c;
-      color: #fff;
-      padding: 20px 28px;
-      margin: 12px 24px 0;
+    /* 期間・時期 */
+    .schedule-section {
+      background: #faf8f4;
       border-radius: 10px;
+      padding: 20px 22px;
+    }
+
+    .schedule-row {
+      display: flex;
+      padding: 9px 0;
+      border-bottom: 1px solid #e8e2d8;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    .schedule-row:last-child {
+      border-bottom: none;
+    }
+
+    .schedule-label {
+      width: 54px;
+      font-weight: 700;
+      color: #2c6e4f;
+      flex-shrink: 0;
+    }
+
+    .schedule-value {
+      color: #444;
+    }
+
+    .schedule-note {
+      font-size: 11px;
+      color: #888;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    /* メリット（テキストのみ） */
+    .merits-text {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.8;
+      padding-left: 4px;
+    }
+
+    .merits-text strong {
+      color: #2c6e4f;
+      font-weight: 800;
+    }
+
+    /* ===== 下段: CTA ===== */
+    .cta {
+      background: #f5f0e8;
+      color: #2d2d2d;
+      padding: 18px 36px;
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 24px;
     }
 
-    .cta-body {
+    .cta-message {
       flex: 1;
     }
 
-    .cta-body h3 {
-      font-size: 19px;
+    .cta-message h3 {
+      font-size: 20px;
       font-weight: 900;
-      line-height: 1.4;
+      color: #2c6e4f;
       margin-bottom: 4px;
     }
 
-    .cta-body p {
-      font-size: 11px;
-      opacity: 0.9;
+    .cta-message p {
+      font-size: 12px;
+      color: #666;
       line-height: 1.6;
     }
 
-    .cta-right {
+    .cta-actions {
       display: flex;
       align-items: center;
       gap: 16px;
@@ -265,99 +284,59 @@
     }
 
     .cta-tel {
-      text-align: right;
+      text-align: center;
     }
 
     .cta-tel-label {
-      font-size: 9px;
-      opacity: 0.8;
+      font-size: 10px;
+      color: #888;
     }
 
     .cta-tel-number {
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 0.02em;
+      font-size: 26px;
+      font-weight: 900;
+      color: #2c6e4f;
     }
 
     .cta-divider {
       width: 1px;
-      height: 60px;
-      background: rgba(255,255,255,0.3);
+      height: 50px;
+      background: #d4cfc5;
     }
 
     .qr-box {
       background: #fff;
       border-radius: 8px;
-      width: 90px;
-      height: 90px;
+      border: 1px solid #e0dbd2;
+      width: 72px;
+      height: 72px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       color: #ccc;
-      font-size: 9px;
+      font-size: 8px;
       text-align: center;
-      line-height: 1.4;
     }
 
     .qr-hint {
-      font-size: 8.5px;
-      opacity: 0.8;
-      margin-top: 3px;
+      font-size: 8px;
+      color: #888;
+      margin-top: 2px;
       text-align: center;
     }
 
     /* フッター */
     .footer {
-      margin-top: auto;
-      background: #2d2d2d;
-      color: #fff;
-      padding: 12px 32px;
+      background: #1a1a1a;
+      color: rgba(255,255,255,0.7);
+      padding: 8px 36px;
+      font-size: 10px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
     }
 
-    .footer-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .footer-mark {
-      width: 34px;
-      height: 34px;
-      background: #2c6e4f;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 7px;
-      font-weight: 700;
-      text-align: center;
-      line-height: 1.2;
-    }
-
-    .footer-info {
-      font-size: 10.5px;
-      line-height: 1.5;
-    }
-
-    .footer-info .name {
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .footer-tel {
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-    }
-
-    .footer-tel small {
-      font-size: 10px;
-      font-weight: 400;
-      margin-right: 4px;
+    .footer strong {
+      color: #fff;
     }
 
     @media print {
@@ -368,119 +347,115 @@
 <body>
   <div class="page">
 
-    <!-- ヘッダー帯 -->
-    <div class="top-bar">
-      城西大学 柳澤ゼミ｜インターンシップ受け入れ企業募集
-    </div>
-
-    <!-- キャッチ -->
-    <div class="catch">
-      <p class="catch-lead">城西大学 柳澤研究室より、企業の皆さまへ</p>
-      <p class="catch-main">
-        うちのゼミ生を、<br>
-        <em>御社で鍛えて</em>もらえませんか。
-      </p>
-      <p class="catch-sub">
-        ボランティアや子どもの居場所づくりに取り組んできた学生たちです。<br>
-        「授業で学んだことを、企業でも試してみたい」<br>
-        ——そう話す学生のために、インターンシップの受け入れ先を探しています。
-      </p>
-    </div>
-
-    <!-- ゼミ活動 -->
-    <div class="activities">
-      <h3 class="section-heading">こんな学生たちです</h3>
-      <div class="activity-list">
-        <div class="activity-main">
-          <span class="activity-tag">主な活動</span>
-          <div class="activity-name">子どもの居場所「Happy-lucky cafe」</div>
-          <div class="activity-desc">
-            放課後の行き場がない子どもたちのために、学生が企画・運営しているカフェ。メニュー決め、買い出し、当日の進行まで全部自分たちでやっています。最初は「何をすればいいかわからない」と言っていた学生も、今では自分から動けるようになりました。
-          </div>
-        </div>
-        <div class="activity-sub">
-          <span class="activity-tag">ボランティア</span>
-          <div class="activity-name">高齢者施設への訪問</div>
-          <div class="activity-desc">
-            近隣の施設を定期訪問。最初は会話が続かなかった学生も、今では名前で呼ばれるように。
-          </div>
-        </div>
-        <div class="activity-sub">
-          <span class="activity-tag">地域連携</span>
-          <div class="activity-name">市の行事運営サポート</div>
-          <div class="activity-desc">
-            坂戸市・鶴ヶ島市の文化祭や体育祭に、準備段階から参加しています。
-          </div>
-        </div>
+    <!-- 上段: 誰からの、何のお願いか -->
+    <div class="top">
+      <div class="top-illust">
+        <span>先生の<br>イラスト<br>（差替予定）</span>
       </div>
-    </div>
-
-    <!-- メリット -->
-    <div class="merits">
-      <h3 class="section-heading">受け入れのメリット</h3>
-      <div class="merit-row">
-        <div class="merit-item">
-          <div class="merit-item-title">学生からの認知を獲得できる</div>
-          <div class="merit-item-desc">求人サイトでは埋もれがちな中小企業でも、インターンなら学生に直接知ってもらえます。採用活動の入り口に。</div>
-        </div>
-        <div class="merit-item">
-          <div class="merit-item-title">コストゼロで試せる</div>
-          <div class="merit-item-desc">企業様の費用負担はありません。まずは短期から気軽に試せます。</div>
-        </div>
-        <div class="merit-item">
-          <div class="merit-item-title">地域・大学との連携</div>
-          <div class="merit-item-desc">インターンをきっかけに、大学や自治体との接点ができます。採用以外の形で関係が続くことも。</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 先生ミニ紹介 -->
-    <div class="professor">
-      <div class="professor-illust">
-        <span>イラスト<br>（差替予定）</span>
-      </div>
-      <div class="professor-body">
-        <p class="professor-name">柳澤 智美</p>
-        <p class="professor-title">城西大学 現代政策学部 教授／埼玉県 共助社会づくり推進委員会 委員長</p>
-        <p class="professor-voice">
-          （先生ご自身のコメントを掲載予定）
+      <div class="top-text">
+        <p class="top-name">柳澤 智美</p>
+        <p class="top-title">城西大学 現代政策学部 教授／埼玉県 共助社会づくり推進委員会 委員長</p>
+        <p class="top-purpose">インターンシップ受け入れ企業を募集しています</p>
+        <p class="top-catch">
+          うちのゼミ生を、<br>
+          <em>御社で鍛えて</em>もらえませんか。
         </p>
       </div>
     </div>
 
-    <!-- CTA -->
-    <div class="cta">
-      <div class="cta-body">
-        <h3>まずはお気軽にご連絡ください</h3>
-        <p>「チラシを見た」とお伝えいただければ、柳澤が直接ご説明します。<br>QRコードからWebページもご覧いただけます。</p>
+    <!-- 先生の思い -->
+    <div class="message">
+      ゼミでは「共助」をテーマに、子どもの居場所づくりや高齢者施設の訪問など、地域の中で手を動かす活動をしてきました。ただ、大学の中だけだと見える世界が限られます。<br>
+      企業の現場で「思い通りにいかない経験」をさせてもらうことが、学生にとって一番の学びになると感じています。<br>
+      短い期間でも構いません。御社の日常に学生を混ぜていただけませんか。
+    </div>
+
+    <!-- 中段 -->
+    <div class="middle">
+
+      <!-- 実績バー -->
+      <div class="stats-bar">
+        <div class="stats-bar-item">
+          <div class="stats-bar-num">45社</div>
+          <div class="stats-bar-label">提携企業</div>
+        </div>
+        <div class="stats-bar-item">
+          <div class="stats-bar-num">40名</div>
+          <div class="stats-bar-label">2025年度 参加学生</div>
+        </div>
+        <div class="stats-bar-item">
+          <div class="stats-bar-num">0円</div>
+          <div class="stats-bar-label">企業様のご負担</div>
+        </div>
       </div>
-      <div class="cta-right">
+
+      <!-- 2カラム: 活動紹介 + 時期・期間 -->
+      <div class="two-col">
+        <div class="col-left">
+          <div class="activity-section">
+            <h3 class="section-heading">活動例</h3>
+            <div class="activity-main-name">子どもの居場所「Happy-lucky cafe」</div>
+            <div class="activity-main-desc">
+              放課後の行き場がない子どものために、学生が企画・運営しているカフェ。メニュー決めから買い出し、当日の進行まで全部自分たちでやっています。
+            </div>
+            <div class="activity-others">
+              ほかにも：高齢者施設への定期訪問／坂戸市・鶴ヶ島市の地域イベント運営サポート
+            </div>
+          </div>
+        </div>
+        <div class="col-right">
+          <div class="schedule-section">
+            <h3 class="section-heading">時期・期間</h3>
+            <div class="schedule-row">
+              <div class="schedule-label">対象</div>
+              <div class="schedule-value">主に学部3年生（2〜4年生）</div>
+            </div>
+            <div class="schedule-row">
+              <div class="schedule-label">時期</div>
+              <div class="schedule-value">夏季・秋季・春季（通年で調整可）</div>
+            </div>
+            <div class="schedule-row">
+              <div class="schedule-label">期間</div>
+              <div class="schedule-value">短期1〜2週間 ／ 中期1〜3ヶ月</div>
+            </div>
+            <div class="schedule-row">
+              <div class="schedule-label">場所</div>
+              <div class="schedule-value">御社の事業所にて</div>
+            </div>
+            <p class="schedule-note">※ 日数・内容は御社のご都合に合わせます</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- メリット -->
+      <p class="merits-text">
+        受け入れ企業には、<strong>求人サイトでは届かない学生との接点</strong>が生まれます。インターンをきっかけに採用につながったケースも。大学や自治体との連携関係ができることもあります。
+      </p>
+
+    </div>
+
+    <!-- 下段: CTA -->
+    <div class="cta">
+      <div class="cta-message">
+        <h3>まずはお電話ください</h3>
+        <p>柳澤が受け入れの流れと進め方をご説明します。<br>「ちょっと話を聞いてみたい」だけでも大丈夫です。</p>
+      </div>
+      <div class="cta-actions">
         <div class="cta-tel">
           <div class="cta-tel-label">お電話はこちら</div>
           <div class="cta-tel-number">049-271-8077</div>
         </div>
         <div class="cta-divider"></div>
         <div>
-          <div class="qr-box">
-            <span>QRコード<br>（後日設定）</span>
-          </div>
-          <div class="qr-hint">詳細ページへ →</div>
+          <div class="qr-box"><span>QRコード<br>（後日設定）</span></div>
+          <div class="qr-hint">詳細ページへ</div>
         </div>
       </div>
     </div>
 
-    <!-- フッター -->
     <div class="footer">
-      <div class="footer-left">
-        <div class="footer-mark">城西<br>大学</div>
-        <div class="footer-info">
-          <div class="name">城西大学 柳澤研究室</div>
-          現代政策学部 社会経済システム学科
-        </div>
-      </div>
-      <div class="footer-tel">
-        <small>TEL</small>049-271-8077
-      </div>
+      <div><strong>城西大学 柳澤研究室</strong>　現代政策学部 社会経済システム学科</div>
+      <div>TEL 049-271-8077</div>
     </div>
 
   </div>
