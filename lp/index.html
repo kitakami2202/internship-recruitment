@@ -880,14 +880,29 @@
         font-size: 15px;
       }
 
+      .flow-table,
+      .flow-table tbody,
+      .flow-table tr,
       .flow-table th,
       .flow-table td {
-        padding: 12px 14px;
-        font-size: 14px;
+        display: block;
+        width: 100%;
       }
 
       .flow-table th {
-        width: 130px;
+        padding: 10px 16px;
+        font-size: 13px;
+        border-bottom: none;
+      }
+
+      .flow-table td {
+        padding: 10px 16px 16px;
+        font-size: 15px;
+        border-bottom: 1px solid #eae6de;
+      }
+
+      .flow-table tr:last-child td {
+        border-bottom: none;
       }
 
       /* メリット */
@@ -1007,8 +1022,8 @@
       }
 
       .about-photo {
-        width: 120px;
-        height: 140px;
+        width: 150px;
+        height: 180px;
       }
 
       .about-name {
