@@ -48,14 +48,14 @@
       width: 150px;
       height: 170px;
       border-radius: 14px;
-      background: #f0ebe3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 9px;
-      color: #aaa;
-      text-align: center;
+      overflow: hidden;
       flex-shrink: 0;
+    }
+
+    .top-illust img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .top-text {
@@ -350,7 +350,7 @@
     <!-- 上段: 誰からの、何のお願いか -->
     <div class="top">
       <div class="top-illust">
-        <span>先生の<br>イラスト<br>（差替予定）</span>
+        <img src="lp/images/先生写真.jpg" alt="柳澤智美 教授">
       </div>
       <div class="top-text">
         <p class="top-name">柳澤 智美</p>
@@ -408,7 +408,7 @@
             <h3 class="section-heading">時期・期間</h3>
             <div class="schedule-row">
               <div class="schedule-label">対象</div>
-              <div class="schedule-value">主に学部3年生（2〜4年生）</div>
+              <div class="schedule-value">学部1〜4年生（留学生含む）</div>
             </div>
             <div class="schedule-row">
               <div class="schedule-label">時期</div>
@@ -416,7 +416,7 @@
             </div>
             <div class="schedule-row">
               <div class="schedule-label">期間</div>
-              <div class="schedule-value">短期1〜2週間 ／ 中期1〜3ヶ月</div>
+              <div class="schedule-value">最低3日〜1週間 ／ ご希望に応じて長期も可</div>
             </div>
             <div class="schedule-row">
               <div class="schedule-label">場所</div>

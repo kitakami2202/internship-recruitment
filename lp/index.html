@@ -664,17 +664,17 @@
     }
 
     .about-photo {
-      background: #e8e2d8;
       border-radius: 10px;
       width: 140px;
-      height: 160px;
+      height: 180px;
       flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      color: #aaa;
-      text-align: center;
+      overflow: hidden;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .about-body {
@@ -1339,7 +1339,7 @@
 
       <div class="about-card">
         <div class="about-photo">
-          <span>写真<br>（差し替え予定）</span>
+          <img src="images/先生写真.jpg" alt="柳澤智美 教授">
         </div>
         <div class="about-body">
           <p class="about-name-ruby">やなぎさわ ともみ</p>
