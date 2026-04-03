@@ -1074,10 +1074,10 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="container">
-      <p class="hero-lead">城西大学 柳澤研究室より、企業の皆さまへ</p>
+      <p class="hero-lead">城西大学総合政策学部　柳澤智美（インターンシップ担当）より、企業の皆さまへ</p>
       <h1>うちの学部生を、<br>御社で鍛えてもらえませんか。</h1>
       <p class="hero-desc">
-        ボランティアや子どもの居場所づくりに取り組んできた学生たちです。<br>
+        ボランティアや子供の居場所づくりなど、様々な活動に取り組んできた学生たちがいる学部です。<br>
         「授業で学んだことを、企業でも試してみたい」<br>
         ——そう話す学生のために、インターンシップの受け入れ先を探しています。
       </p>
@@ -1090,7 +1090,7 @@
     <div class="container">
       <h2>学部生が取り組んでいること</h2>
       <p class="students-intro">
-        総合政策学部の学生たちは「共助」をテーマに、地域の中で実際に手を動かしながら学んでいます。
+        総合政策学部の学生たちは「実学」をテーマに、地域の中で実際に手を動かしながら学んでいます。
       </p>
 
       <div class="student-grid">
@@ -1246,7 +1246,7 @@
     <div class="container">
       <h2>お問い合わせ</h2>
       <p class="contact-intro">ご質問だけでも構いません。お気軽にご連絡ください。</p>
-      <p class="contact-tel">お電話でも受け付けています：<strong>049-271-8077</strong>（柳澤研究室）</p>
+      <p class="contact-tel">お電話でも受け付けています：<strong>049-271-8077</strong>（インターンシップ担当窓口）</p>
 
       <div class="contact-form-wrapper">
         <form id="contactForm" onsubmit="return handleSubmit(event)">
@@ -1298,7 +1298,10 @@
               <label><input type="checkbox" name="jobtype" value="企画/コンサルティング"> 企画/コンサルティング</label>
               <label><input type="checkbox" name="jobtype" value="事務/バックオフィス"> 事務/バックオフィス</label>
               <label><input type="checkbox" name="jobtype" value="研究開発"> 研究開発</label>
-              <label><input type="checkbox" name="jobtype" value="その他"> その他</label>
+              <label><input type="checkbox" name="jobtype" value="その他" id="jobtype-other"> その他</label>
+            </div>
+            <div class="jobtype-other-detail" id="jobtypeOtherDetail" style="display:none; margin-top:8px;">
+              <input type="text" name="jobtype_other_detail" id="jobtypeOtherInput" placeholder="具体的な職種・テーマをご記入ください">
             </div>
           </div>
 
@@ -1399,9 +1402,30 @@
 
   <!-- JavaScript -->
   <script>
+    // === その他トグル ===
+    document.getElementById('jobtype-other').addEventListener('change', function() {
+      var detail = document.getElementById('jobtypeOtherDetail');
+      var input = document.getElementById('jobtypeOtherInput');
+      if (this.checked) {
+        detail.style.display = 'block';
+      } else {
+        detail.style.display = 'none';
+        input.value = '';
+      }
+    });
+
     // === Form Submission ===
     function handleSubmit(e) {
       e.preventDefault();
+
+      // その他バリデーション
+      var otherCheck = document.getElementById('jobtype-other');
+      var otherInput = document.getElementById('jobtypeOtherInput');
+      if (otherCheck.checked && !otherInput.value.trim()) {
+        otherInput.focus();
+        alert('「その他」を選択した場合は詳細を入力してください。');
+        return false;
+      }
 
       var form = document.getElementById('contactForm');
       var formData = new FormData(form);
@@ -1419,6 +1443,9 @@
       formData.getAll('jobtype').forEach(function(v) {
         googleData.append('entry.2011443136', v);
       });
+
+      // その他詳細
+      googleData.append('entry.694599284', formData.get('jobtype_other_detail') || '');
 
       googleData.append('entry.558958974', formData.get('headcount'));
 
@@ -1438,7 +1465,9 @@
 
       // Show success message
       form.style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
+      var successEl = document.getElementById('formSuccess');
+      successEl.style.display = 'block';
+      successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
       return false;
     }
